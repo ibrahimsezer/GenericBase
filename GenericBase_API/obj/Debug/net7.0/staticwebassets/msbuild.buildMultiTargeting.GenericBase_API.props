@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\GenericBase_API.props" />
+</Project>

@@ -8,9 +8,9 @@ using Microsoft.Extensions.Options;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddDbContext<DataAccess>();
+builder.Services.AddScoped<DbContext, DataAccess>();
 builder.Services.AddScoped(typeof(IBaseRepo<>), typeof(BaseRepo<>));
-builder.Services.AddScoped(typeof(IProductRepo), typeof(ProductRepo<Product>));
+builder.Services.AddScoped<IProductRepo,ProductRepo<Product>>();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();

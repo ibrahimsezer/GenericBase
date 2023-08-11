@@ -12,13 +12,40 @@ namespace Data.Layer.Access.Concrete
     public class ProductRepo<T> : IProductRepo
     {
         private readonly DbContext _context;
-
         public ProductRepo(DbContext context)
         {
             _context = context;
         }
 
-        void IBaseRepo<Product>.Add(Product entity)
+        public void Add(Product entity)
+        {
+            _context.Set<Product>().Add(entity);
+        }
+
+        public void Delete(Product entity)
+        {
+            _context.Set<Product>().Remove(entity);
+        }
+
+        public IEnumerable<Product> GetAll()
+        {
+            return _context.Set<Product>().ToList();
+        }
+
+        public Product GetById(int id)
+        {
+            return _context.Set<Product>().Find(id);
+        }
+
+        public void Update(Product entity)
+        {
+            _context.Set<Product>().Update(entity);
+        }
+    }
+}
+
+/*
+  void IBaseRepo<Product>.Add(Product entity)
         {
             _context.Set<Product>().Add(entity);
         }
@@ -41,6 +68,4 @@ namespace Data.Layer.Access.Concrete
         void IBaseRepo<Product>.Update(Product entity)
         {
             _context.Set<Product>().Update(entity);
-        }
-    }
-}
+        }*/

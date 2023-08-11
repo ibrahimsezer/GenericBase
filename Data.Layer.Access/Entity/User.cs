@@ -10,7 +10,7 @@ namespace Data.Layer.Access.Entity
     {
         public int Id { get; set; }
         public int InfoId { get; set; }//Product için koyuldu.
-        public ICollection<Product> Products { get; set; }
+        public ICollection<Product> Products { get; set; }//Her kullanıcı birden fazla ürüne sahip olabilir
 
         public UserInfo Info { get; set; }  
     }

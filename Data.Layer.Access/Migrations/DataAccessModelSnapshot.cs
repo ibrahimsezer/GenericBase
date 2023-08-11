@@ -39,7 +39,7 @@ namespace Data.Layer.Access.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Products", (string)null);
+                    b.ToTable("Products");
                 });
 
             modelBuilder.Entity("Data.Layer.Access.Entity.User<Data.Layer.Access.Entity.UserInfo>", b =>
@@ -62,7 +62,7 @@ namespace Data.Layer.Access.Migrations
                     b.HasIndex("InfoId")
                         .IsUnique();
 
-                    b.ToTable("Users", (string)null);
+                    b.ToTable("Users");
 
                     b.HasDiscriminator<string>("Discriminator").HasValue("User<UserInfo>");
 
@@ -101,10 +101,6 @@ namespace Data.Layer.Access.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Password")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UserEmail")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

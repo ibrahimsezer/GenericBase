@@ -25,7 +25,7 @@ namespace Data.Layer.Access.Concrete
 
         void IBaseRepo<Product>.Delete(Product entity)
         {
-           // _context.Set<Product>().Remove(entity);
+           _context.Set<Product>().Remove(entity);
         }
 
         IEnumerable<Product> IBaseRepo<Product>.GetAll()

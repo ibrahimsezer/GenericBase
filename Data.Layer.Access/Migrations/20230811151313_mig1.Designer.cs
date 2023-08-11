@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Data.Layer.Access.Migrations
 {
     [DbContext(typeof(DataAccess))]
-    [Migration("20230811135701_mig1")]
+    [Migration("20230811151313_mig1")]
     partial class mig1
     {
         /// <inheritdoc />
@@ -104,10 +104,6 @@ namespace Data.Layer.Access.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Password")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UserEmail")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

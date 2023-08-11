@@ -20,10 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <ProjectReference Include="..\Business.Layer.Access\Business.Layer.Access.csproj" />
     <ProjectReference Include="..\Data.Layer.Access\Data.Layer.Access.csproj" />
   </ItemGroup>
 

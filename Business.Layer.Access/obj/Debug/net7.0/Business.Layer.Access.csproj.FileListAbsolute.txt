@@ -22,3 +22,6 @@ C:\Users\ibrah\source\repos\GenericBase\Business.Layer.Access\obj\Debug\net7.0\B
 C:\Users\ibrah\source\repos\GenericBase\Business.Layer.Access\obj\Debug\net7.0\refint\Business.Layer.Access.dll
 C:\Users\ibrah\source\repos\GenericBase\Business.Layer.Access\obj\Debug\net7.0\Business.Layer.Access.pdb
 C:\Users\ibrah\source\repos\GenericBase\Business.Layer.Access\obj\Debug\net7.0\ref\Business.Layer.Access.dll
+C:\Users\ibrah\source\repos\GenericBase\Business.Layer.Access\bin\Debug\net7.0\Data.Layer.Access.dll
+C:\Users\ibrah\source\repos\GenericBase\Business.Layer.Access\bin\Debug\net7.0\Data.Layer.Access.pdb
+C:\Users\ibrah\source\repos\GenericBase\Business.Layer.Access\obj\Debug\net7.0\Business.Layer.Access.csproj.CopyComplete

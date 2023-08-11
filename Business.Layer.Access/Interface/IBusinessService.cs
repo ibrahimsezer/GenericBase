@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Business.Layer.Access.Interface
 {
-    internal interface IBusinessService:IBaseRepo<UserInfo>
+    public interface IBusinessService:IBaseRepo<UserInfo>
     {
 
     }

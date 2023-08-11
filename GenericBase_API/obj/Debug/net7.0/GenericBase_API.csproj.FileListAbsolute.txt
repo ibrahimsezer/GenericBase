@@ -154,3 +154,5 @@ C:\Users\ibrah\source\repos\GenericBase\GenericBase_API\obj\Debug\net7.0\refint\
 C:\Users\ibrah\source\repos\GenericBase\GenericBase_API\obj\Debug\net7.0\GenericBase_API.pdb
 C:\Users\ibrah\source\repos\GenericBase\GenericBase_API\obj\Debug\net7.0\GenericBase_API.genruntimeconfig.cache
 C:\Users\ibrah\source\repos\GenericBase\GenericBase_API\obj\Debug\net7.0\ref\GenericBase_API.dll
+C:\Users\ibrah\source\repos\GenericBase\GenericBase_API\bin\Debug\net7.0\Business.Layer.Access.dll
+C:\Users\ibrah\source\repos\GenericBase\GenericBase_API\bin\Debug\net7.0\Business.Layer.Access.pdb

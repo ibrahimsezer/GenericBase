@@ -1239,6 +1239,19 @@
           }
         }
       },
+      "Business.Layer.Access/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Data.Layer.Access": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Business.Layer.Access.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Business.Layer.Access.dll": {}
+        }
+      },
       "Data.Layer.Access/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
@@ -3923,6 +3936,11 @@
         "version.txt"
       ]
     },
+    "Business.Layer.Access/1.0.0": {
+      "type": "project",
+      "path": "../Business.Layer.Access/Business.Layer.Access.csproj",
+      "msbuildProject": "../Business.Layer.Access/Business.Layer.Access.csproj"
+    },
     "Data.Layer.Access/1.0.0": {
       "type": "project",
       "path": "../Data.Layer.Access/Data.Layer.Access.csproj",
@@ -3931,6 +3949,7 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "Business.Layer.Access >= 1.0.0",
       "Data.Layer.Access >= 1.0.0",
       "Microsoft.AspNetCore.OpenApi >= 7.0.9",
       "Microsoft.EntityFrameworkCore.Design >= 7.0.10",
@@ -3966,6 +3985,9 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
+            "C:\\Users\\ibrah\\source\\repos\\GenericBase\\Business.Layer.Access\\Business.Layer.Access.csproj": {
+              "projectPath": "C:\\Users\\ibrah\\source\\repos\\GenericBase\\Business.Layer.Access\\Business.Layer.Access.csproj"
+            },
             "C:\\Users\\ibrah\\source\\repos\\GenericBase\\Data.Layer.Access\\Data.Layer.Access.csproj": {
               "projectPath": "C:\\Users\\ibrah\\source\\repos\\GenericBase\\Data.Layer.Access\\Data.Layer.Access.csproj"
             }

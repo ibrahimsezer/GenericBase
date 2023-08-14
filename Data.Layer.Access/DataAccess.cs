@@ -11,7 +11,7 @@ namespace Data.Layer.Access
 {
     public class DataAccess:DbContext
     {
-        public DbSet<User<UserInfo>> Users { get; set; }
+        public DbSet<User> Users { get; set; }
         public DbSet<Product> Products { get; set; }   
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -27,8 +27,8 @@ namespace Data.Layer.Access
             // UserInfo ve User arasında birebir ilişki
             modelBuilder.Entity<UserInfo>()
                 .HasOne(u => u.User)
-                .WithOne(i=>i.Info)
-                .HasForeignKey<User<UserInfo>>(u=>u.InfoId);
+                .WithOne(i=>i.UserInformation)
+                .HasForeignKey<User>(u=>u.UserInformation);
 
             // Product ve UserInfo arasında çoka çok ilişki
             modelBuilder.Entity<Product>()

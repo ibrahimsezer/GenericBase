@@ -17,29 +17,34 @@ namespace Data.Layer.Access.Concrete
             _context = context;
         }
 
-        void IBaseRepo<T>.Add(T entity)
+        async void IBaseRepo<T>.Add(T entity)
         {
             _context.Set<T>().Add(entity);
+            await _context.SaveChangesAsync();
         }
 
-        void IBaseRepo<T>.Delete(T entity)
+        async void IBaseRepo<T>.Delete(T entity)
         {
             _context.Set<T>().Remove(entity);
+            await _context.SaveChangesAsync();
         }
 
         IEnumerable<T> IBaseRepo<T>.GetAll()
         {
-            return _context.Set<T>().ToList();
+            var getall = _context.Set<T>().ToList();
+            return getall;
         }
 
-        T IBaseRepo<T>.GetById(int id)
+        Task<T> IBaseRepo<T>.GetById(int id)
         {
-            return _context.Set<T>().Find(id);
+            return _context.Set<Task<T>>().Find(id);
+            
         }
 
-        void IBaseRepo<T>.Update(T entity)
+        async void  IBaseRepo<T>.Update(T entity)
         {
-            _context.Set<T>().Update(entity);
+             _context.Set<T>().Update(entity);
+            await _context.SaveChangesAsync();
         }
     }
 }

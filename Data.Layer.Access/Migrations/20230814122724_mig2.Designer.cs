@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Data.Layer.Access.Migrations
 {
     [DbContext(typeof(DataAccess))]
-    [Migration("20230811151313_mig1")]
-    partial class mig1
+    [Migration("20230814122724_mig2")]
+    partial class mig2
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -45,7 +45,7 @@ namespace Data.Layer.Access.Migrations
                     b.ToTable("Products");
                 });
 
-            modelBuilder.Entity("Data.Layer.Access.Entity.User<Data.Layer.Access.Entity.UserInfo>", b =>
+            modelBuilder.Entity("Data.Layer.Access.Entity.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -57,22 +57,22 @@ namespace Data.Layer.Access.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("InfoId")
+                    b.Property<int>("UserInformationId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("InfoId")
+                    b.HasIndex("UserInformationId")
                         .IsUnique();
 
                     b.ToTable("Users");
 
-                    b.HasDiscriminator<string>("Discriminator").HasValue("User<UserInfo>");
+                    b.HasDiscriminator<string>("Discriminator").HasValue("User");
 
                     b.UseTphMappingStrategy();
                 });
 
-            modelBuilder.Entity("ProductUser<UserInfo>", b =>
+            modelBuilder.Entity("ProductUser", b =>
                 {
                     b.Property<int>("ProductsId")
                         .HasColumnType("int");
@@ -89,7 +89,7 @@ namespace Data.Layer.Access.Migrations
 
             modelBuilder.Entity("Data.Layer.Access.Entity.UserInfo", b =>
                 {
-                    b.HasBaseType("Data.Layer.Access.Entity.User<Data.Layer.Access.Entity.UserInfo>");
+                    b.HasBaseType("Data.Layer.Access.Entity.User");
 
                     b.Property<string>("Address")
                         .IsRequired()
@@ -114,18 +114,18 @@ namespace Data.Layer.Access.Migrations
                     b.HasDiscriminator().HasValue("UserInfo");
                 });
 
-            modelBuilder.Entity("Data.Layer.Access.Entity.User<Data.Layer.Access.Entity.UserInfo>", b =>
+            modelBuilder.Entity("Data.Layer.Access.Entity.User", b =>
                 {
-                    b.HasOne("Data.Layer.Access.Entity.UserInfo", "Info")
+                    b.HasOne("Data.Layer.Access.Entity.UserInfo", "UserInformation")
                         .WithOne("User")
-                        .HasForeignKey("Data.Layer.Access.Entity.User<Data.Layer.Access.Entity.UserInfo>", "InfoId")
+                        .HasForeignKey("Data.Layer.Access.Entity.User", "UserInformationId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Info");
+                    b.Navigation("UserInformation");
                 });
 
-            modelBuilder.Entity("ProductUser<UserInfo>", b =>
+            modelBuilder.Entity("ProductUser", b =>
                 {
                     b.HasOne("Data.Layer.Access.Entity.Product", null)
                         .WithMany()
@@ -133,7 +133,7 @@ namespace Data.Layer.Access.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Data.Layer.Access.Entity.User<Data.Layer.Access.Entity.UserInfo>", null)
+                    b.HasOne("Data.Layer.Access.Entity.User", null)
                         .WithMany()
                         .HasForeignKey("UsersId")
                         .OnDelete(DeleteBehavior.Cascade)

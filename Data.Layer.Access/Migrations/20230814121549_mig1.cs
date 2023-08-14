@@ -30,8 +30,9 @@ namespace Data.Layer.Access.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    InfoId = table.Column<int>(type: "int", nullable: false),
+                    UserInformationId = table.Column<int>(type: "int", nullable: false),
                     Discriminator = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    InfoId = table.Column<int>(type: "int", nullable: true),
                     UserName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Password = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -42,8 +43,8 @@ namespace Data.Layer.Access.Migrations
                 {
                     table.PrimaryKey("PK_Users", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Users_Users_InfoId",
-                        column: x => x.InfoId,
+                        name: "FK_Users_Users_UserInformationId",
+                        column: x => x.UserInformationId,
                         principalTable: "Users",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.NoAction);
@@ -79,9 +80,9 @@ namespace Data.Layer.Access.Migrations
                 column: "UsersId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Users_InfoId",
+                name: "IX_Users_UserInformationId",
                 table: "Users",
-                column: "InfoId",
+                column: "UserInformationId",
                 unique: true);
         }
 

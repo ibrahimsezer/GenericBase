@@ -32,14 +32,20 @@ namespace Data.Layer.Access.Concrete
             return _context.Set<Product>().ToList();
         }
 
-        public Product GetById(int id)
+        public async Task<Product> GetById(int id)
         {
-            return _context.Set<Product>().Find(id);
+            return await _context.Set<Product>().FindAsync(id);
         }
 
         public void Update(Product entity)
         {
             _context.Set<Product>().Update(entity);
+        }
+
+        Task<Product> IBaseRepo<Product>.GetById(int id)
+        {
+            return _context.Set<Task<Product>>().Find(id);
+
         }
     }
 }

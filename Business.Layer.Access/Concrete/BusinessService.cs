@@ -37,14 +37,21 @@ namespace Business.Layer.Access.Concrete
             return _bridgeService.GetAll();
         }
 
-        public UserInfo GetById(int id)
-        {
-             return _bridgeService.GetById(id);
-        }
+   
 
         public void Update(UserInfo entity)
         {
             _bridgeService.Update(entity);
+        }
+
+        Task<UserInfo> IBaseRepo<UserInfo>.GetById(int id)
+        {
+            if (id != null)
+            {
+
+                return _bridgeService.GetById(id);
+            }
+            else throw new Exception("Error, id not found");
         }
     }
 }

@@ -1,3 +1,5 @@
+using Business.Layer.Access.Concrete;
+using Business.Layer.Access.Interface;
 using Data.Layer.Access;
 using Data.Layer.Access.Concrete;
 using Data.Layer.Access.Entity;
@@ -9,8 +11,11 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddScoped<DbContext, DataAccess>();
-builder.Services.AddScoped(typeof(IBaseRepo<>), typeof(BaseRepo<>));
+
 builder.Services.AddScoped<IProductRepo,ProductRepo<Product>>();
+builder.Services.AddScoped<IBaseRepo<UserInfo>, BaseRepo<UserInfo>>();
+builder.Services.AddScoped<IBusinessService, BusinessService>();
+
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();

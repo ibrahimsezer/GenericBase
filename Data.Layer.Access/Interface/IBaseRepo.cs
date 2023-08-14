@@ -8,7 +8,7 @@ namespace Data.Layer.Access.Interface
 {
     public interface IBaseRepo<T> where T : class
     {
-        T GetById(int id);
+        Task<T>GetById(int id);
         IEnumerable<T> GetAll();
         void Add(T entity);
         void Update(T entity);

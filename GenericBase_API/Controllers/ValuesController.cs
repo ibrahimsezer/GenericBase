@@ -1,4 +1,5 @@
 ﻿using Business.Layer.Access.Interface;
+using Data.Layer.Access.Entity;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,16 +17,23 @@ namespace GenericBase_API.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetId(int id)
+        public  async Task<IActionResult> GetIdAsync(int id)
         {
-            var getuser = _businessService.GetById(id);
-            return Ok(getuser);
+            var getid = await _businessService.GetById(id);
+            return Ok();
         }
-        [HttpGet]
-        public IActionResult GetAll()
-        {
-            var getall =_businessService.GetAll();
-            return Ok(getall);
-        }
+        //[HttpGet]
+        //public IActionResult GetAll()
+        //{
+        //    _businessService.GetAll();
+        //    return Ok();
+        //}
+
+        [HttpDelete]
+        public IActionResult DeleteById(int id) {
+            UserInfo entity = new();
+            entity.Id = id;
+            _businessService.Delete(entity);
+                return null; }
     }
 }

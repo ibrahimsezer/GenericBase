@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 
 namespace Data.Layer.Access.Interface
 {
-    public interface IProductRepo : IBaseRepo<Product>
+    public interface IProductRepo
     {
-       
+
+        Task<List<User>> GetAllUsers();
+        Task<User> CreateUser(User user);
     }
 }

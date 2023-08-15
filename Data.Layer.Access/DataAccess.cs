@@ -11,12 +11,16 @@ namespace Data.Layer.Access
 {
     public class DataAccess:DbContext
     {
+        public DataAccess(DbContextOptions<DataAccess>options):base(options)
+        {
+            
+        }
         public DbSet<User> Users { get; set; }
         public DbSet<Product> Products { get; set; }   
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlServer("Data Source=SEZER;Database=GenericBaseDb;Integrated Security=True;Trust Server Certificate=True;");
+            optionsBuilder.UseSqlServer("Data Source=SEZER;Database=NewGenericBaseDb;Integrated Security=True;Trust Server Certificate=True;");
         }
 
 
@@ -24,17 +28,17 @@ namespace Data.Layer.Access
         {
             base.OnModelCreating(modelBuilder);
 
-            // UserInfo ve User arasında birebir ilişki
-            modelBuilder.Entity<UserInfo>()
-                .HasOne(u => u.User)
-                .WithOne(i=>i.UserInformation)
-                .HasForeignKey<User>(u=>u.UserInformation);
+            //// UserInfo ve User arasında birebir ilişki
+            //modelBuilder.Entity<UserInfo>()
+            //    .HasOne(u => u.User)
+            //    .WithOne(i=>i.UserInformation)
+            //    .HasForeignKey<User>(u=>u.UserInformation);
 
-            // Product ve UserInfo arasında çoka çok ilişki
-            modelBuilder.Entity<Product>()
-                .HasMany(p => p.Users)
-                .WithMany(u => u.Products)
-                .UsingEntity(join => join.ToTable("ProductUser"));
+            //// Product ve UserInfo arasında çoka çok ilişki
+            //modelBuilder.Entity<Product>()
+            //    .HasMany(p => p.Users)
+            //    .WithMany(u => u.Products)
+            //    .UsingEntity(join => join.ToTable("ProductUser"));
                 
 
         }

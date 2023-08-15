@@ -16,24 +16,31 @@ namespace GenericBase_API.Controllers
             _businessService = businessService;
         }
 
-        [HttpGet]
-        public  async Task<IActionResult> GetIdAsync(int id)
-        {
-            var getid = await _businessService.GetById(id);
-            return Ok();
-        }
         //[HttpGet]
-        //public IActionResult GetAll()
+        //public  async Task<IActionResult> GetIdAsync(int id)
         //{
-        //    _businessService.GetAll();
+        //    var getid = await _businessService.GetById(id);
         //    return Ok();
         //}
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            var getalluser = await _businessService.GetAllUser();
+            return Ok(getalluser);
+        }
 
-        [HttpDelete]
-        public IActionResult DeleteById(int id) {
-            UserInfo entity = new();
-            entity.Id = id;
-            _businessService.Delete(entity);
-                return null; }
+        [HttpPost]
+        public async Task<IActionResult> CreateUser(User user)
+        {
+            var createUser = await _businessService.CreateUser(user);
+            return Ok(createUser);
+        }
+
+        //[HttpDelete]
+        //public IActionResult DeleteById(int id) {
+        //    UserInfo entity = new();
+        //    entity.Id = id;
+        //    _businessService.Delete(entity);
+        //        return null; }
     }
 }

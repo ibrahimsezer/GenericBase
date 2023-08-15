@@ -26,3 +26,17 @@ C:\Users\ibrah\source\repos\GenericBase\Data.Layer.Access\obj\Debug\net7.0\refin
 C:\Users\ibrah\source\repos\GenericBase\Data.Layer.Access\obj\Debug\net7.0\Data.Layer.Access.pdb
 C:\Users\ibrah\source\repos\GenericBase\Data.Layer.Access\obj\Debug\net7.0\Data.Layer.Access.genruntimeconfig.cache
 C:\Users\ibrah\source\repos\GenericBase\Data.Layer.Access\obj\Debug\net7.0\ref\Data.Layer.Access.dll
+C:\Users\ibrah\OneDrive\Masaüstü\repogeneric\Data.Layer.Access\bin\Debug\net7.0\Data.Layer.Access.deps.json
+C:\Users\ibrah\OneDrive\Masaüstü\repogeneric\Data.Layer.Access\bin\Debug\net7.0\Data.Layer.Access.runtimeconfig.json
+C:\Users\ibrah\OneDrive\Masaüstü\repogeneric\Data.Layer.Access\bin\Debug\net7.0\Data.Layer.Access.dll
+C:\Users\ibrah\OneDrive\Masaüstü\repogeneric\Data.Layer.Access\bin\Debug\net7.0\Data.Layer.Access.pdb
+C:\Users\ibrah\OneDrive\Masaüstü\repogeneric\Data.Layer.Access\obj\Debug\net7.0\Data.Layer.Access.csproj.AssemblyReference.cache
+C:\Users\ibrah\OneDrive\Masaüstü\repogeneric\Data.Layer.Access\obj\Debug\net7.0\Data.Layer.Access.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ibrah\OneDrive\Masaüstü\repogeneric\Data.Layer.Access\obj\Debug\net7.0\Data.Layer.Access.AssemblyInfoInputs.cache
+C:\Users\ibrah\OneDrive\Masaüstü\repogeneric\Data.Layer.Access\obj\Debug\net7.0\Data.Layer.Access.AssemblyInfo.cs
+C:\Users\ibrah\OneDrive\Masaüstü\repogeneric\Data.Layer.Access\obj\Debug\net7.0\Data.Layer.Access.csproj.CoreCompileInputs.cache
+C:\Users\ibrah\OneDrive\Masaüstü\repogeneric\Data.Layer.Access\obj\Debug\net7.0\Data.Layer.Access.dll
+C:\Users\ibrah\OneDrive\Masaüstü\repogeneric\Data.Layer.Access\obj\Debug\net7.0\refint\Data.Layer.Access.dll
+C:\Users\ibrah\OneDrive\Masaüstü\repogeneric\Data.Layer.Access\obj\Debug\net7.0\Data.Layer.Access.pdb
+C:\Users\ibrah\OneDrive\Masaüstü\repogeneric\Data.Layer.Access\obj\Debug\net7.0\Data.Layer.Access.genruntimeconfig.cache
+C:\Users\ibrah\OneDrive\Masaüstü\repogeneric\Data.Layer.Access\obj\Debug\net7.0\ref\Data.Layer.Access.dll

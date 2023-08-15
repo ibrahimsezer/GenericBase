@@ -1,4 +1,5 @@
-﻿using Data.Layer.Access.Interface;
+﻿using Data.Layer.Access.Entity;
+using Data.Layer.Access.Interface;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -8,43 +9,44 @@ using System.Threading.Tasks;
 
 namespace Data.Layer.Access.Concrete
 {
-    public class BaseRepo<T> : IBaseRepo<T> where T : class
+    public abstract class  BaseRepo<T> : IBaseRepo<T> where T : BaseEntity
     {
-        private readonly DbContext _context;
-
-        public BaseRepo(DbContext context)
+        private readonly DataAccess _context;
+        public BaseRepo(DataAccess context)
         {
             _context = context;
         }
 
-        async void IBaseRepo<T>.Add(T entity)
+        public virtual async  Task<T> Create(T entity)
         {
-            _context.Set<T>().Add(entity);
+            await _context.Set<T>().AddAsync(entity);
             await _context.SaveChangesAsync();
+            return entity;
         }
+        //  async void IBaseRepo<T>.Delete(T entity)
+        //{
+        //    _context.Set<T>().FindAsync(entity);
+        //    _context.Remove(entity);
+        //    await _context.SaveChangesAsync();
 
-        async void IBaseRepo<T>.Delete(T entity)
-        {
-            _context.Set<T>().Remove(entity);
-            await _context.SaveChangesAsync();
-        }
+        //}
 
-        IEnumerable<T> IBaseRepo<T>.GetAll()
+        public virtual async Task<List<T>> GetAll()
         {
-            var getall = _context.Set<T>().ToList();
-            return getall;
-        }
-
-        Task<T> IBaseRepo<T>.GetById(int id)
-        {
-            return _context.Set<Task<T>>().Find(id);
+            return await _context.Set<T>().ToListAsync();
             
         }
 
-        async void  IBaseRepo<T>.Update(T entity)
-        {
-             _context.Set<T>().Update(entity);
-            await _context.SaveChangesAsync();
-        }
+        //public virtual async Task<T> IBaseRepo<T>.GetById(int id)
+        //{
+        //    return await _context.Set<Task<T>>().Find(id);
+            
+        //}
+
+        //public virtual async void  IBaseRepo<T>.Update(T entity)
+        //{
+        //     _context.Set<T>().Update(entity);
+        //    await _context.SaveChangesAsync();
+        //}
     }
 }

@@ -3958,19 +3958,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ibrah\\.nuget\\packages\\": {}
+    "C:\\Users\\fatih\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ibrah\\source\\repos\\GenericBase\\GenericBase_API\\GenericBase_API.csproj",
+      "projectUniqueName": "C:\\Users\\fatih\\OneDrive\\Masaüstü\\Stajyer örnek Vs\\Solution2\\GenericBase\\GenericBase_API\\GenericBase_API.csproj",
       "projectName": "GenericBase_API",
-      "projectPath": "C:\\Users\\ibrah\\source\\repos\\GenericBase\\GenericBase_API\\GenericBase_API.csproj",
-      "packagesPath": "C:\\Users\\ibrah\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ibrah\\source\\repos\\GenericBase\\GenericBase_API\\obj\\",
+      "projectPath": "C:\\Users\\fatih\\OneDrive\\Masaüstü\\Stajyer örnek Vs\\Solution2\\GenericBase\\GenericBase_API\\GenericBase_API.csproj",
+      "packagesPath": "C:\\Users\\fatih\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\fatih\\OneDrive\\Masaüstü\\Stajyer örnek Vs\\Solution2\\GenericBase\\GenericBase_API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ibrah\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\fatih\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3978,18 +3978,17 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\sdk\\7.0.306\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\ibrah\\source\\repos\\GenericBase\\Business.Layer.Access\\Business.Layer.Access.csproj": {
-              "projectPath": "C:\\Users\\ibrah\\source\\repos\\GenericBase\\Business.Layer.Access\\Business.Layer.Access.csproj"
+            "C:\\Users\\fatih\\OneDrive\\Masaüstü\\Stajyer örnek Vs\\Solution2\\GenericBase\\Business.Layer.Access\\Business.Layer.Access.csproj": {
+              "projectPath": "C:\\Users\\fatih\\OneDrive\\Masaüstü\\Stajyer örnek Vs\\Solution2\\GenericBase\\Business.Layer.Access\\Business.Layer.Access.csproj"
             },
-            "C:\\Users\\ibrah\\source\\repos\\GenericBase\\Data.Layer.Access\\Data.Layer.Access.csproj": {
-              "projectPath": "C:\\Users\\ibrah\\source\\repos\\GenericBase\\Data.Layer.Access\\Data.Layer.Access.csproj"
+            "C:\\Users\\fatih\\OneDrive\\Masaüstü\\Stajyer örnek Vs\\Solution2\\GenericBase\\Data.Layer.Access\\Data.Layer.Access.csproj": {
+              "projectPath": "C:\\Users\\fatih\\OneDrive\\Masaüstü\\Stajyer örnek Vs\\Solution2\\GenericBase\\Data.Layer.Access\\Data.Layer.Access.csproj"
             }
           }
         }
@@ -4044,7 +4043,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

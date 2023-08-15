@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ibrah\\source\\repos\\GenericBase\\Data.Layer.Access\\Data.Layer.Access.csproj": {}
+    "C:\\Users\\fatih\\OneDrive\\Masaüstü\\Stajyer örnek Vs\\Solution2\\GenericBase\\Data.Layer.Access\\Data.Layer.Access.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ibrah\\source\\repos\\GenericBase\\Data.Layer.Access\\Data.Layer.Access.csproj": {
+    "C:\\Users\\fatih\\OneDrive\\Masaüstü\\Stajyer örnek Vs\\Solution2\\GenericBase\\Data.Layer.Access\\Data.Layer.Access.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ibrah\\source\\repos\\GenericBase\\Data.Layer.Access\\Data.Layer.Access.csproj",
+        "projectUniqueName": "C:\\Users\\fatih\\OneDrive\\Masaüstü\\Stajyer örnek Vs\\Solution2\\GenericBase\\Data.Layer.Access\\Data.Layer.Access.csproj",
         "projectName": "Data.Layer.Access",
-        "projectPath": "C:\\Users\\ibrah\\source\\repos\\GenericBase\\Data.Layer.Access\\Data.Layer.Access.csproj",
-        "packagesPath": "C:\\Users\\ibrah\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ibrah\\source\\repos\\GenericBase\\Data.Layer.Access\\obj\\",
+        "projectPath": "C:\\Users\\fatih\\OneDrive\\Masaüstü\\Stajyer örnek Vs\\Solution2\\GenericBase\\Data.Layer.Access\\Data.Layer.Access.csproj",
+        "packagesPath": "C:\\Users\\fatih\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\fatih\\OneDrive\\Masaüstü\\Stajyer örnek Vs\\Solution2\\GenericBase\\Data.Layer.Access\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ibrah\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\fatih\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -77,7 +77,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

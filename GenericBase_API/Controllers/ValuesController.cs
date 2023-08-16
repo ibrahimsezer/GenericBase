@@ -43,13 +43,14 @@ namespace GenericBase_API.Controllers
             return Ok();
         }
 
+        //product
+        //[HttpDelete("product")]
+        //public async Task<IActionResult> DeleteProductById(int id)
+        //{
+        //    await _businessService.DeleteBusinessProduct(id);
+        //    return Ok();
+        //}
 
-        [HttpDelete("product")]
-        public async Task<IActionResult> DeleteProductById(int id)
-        {
-            await _businessService.DeleteBusinessProduct(id);
-            return Ok();
-        }
         //[HttpGet]
         //public async Task<IActionResult> GetUser(User user)
         //{

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ibrah\\OneDrive\\Masaüstü\\.net\\repogeneric\\Business.Layer.Access\\Business.Layer.Access.csproj": {}
+    "C:\\Users\\ibrah\\source\\repos\\GenericBase\\Business.Layer.Access\\Business.Layer.Access.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ibrah\\OneDrive\\Masaüstü\\.net\\repogeneric\\Business.Layer.Access\\Business.Layer.Access.csproj": {
+    "C:\\Users\\ibrah\\source\\repos\\GenericBase\\Business.Layer.Access\\Business.Layer.Access.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ibrah\\OneDrive\\Masaüstü\\.net\\repogeneric\\Business.Layer.Access\\Business.Layer.Access.csproj",
+        "projectUniqueName": "C:\\Users\\ibrah\\source\\repos\\GenericBase\\Business.Layer.Access\\Business.Layer.Access.csproj",
         "projectName": "Business.Layer.Access",
-        "projectPath": "C:\\Users\\ibrah\\OneDrive\\Masaüstü\\.net\\repogeneric\\Business.Layer.Access\\Business.Layer.Access.csproj",
+        "projectPath": "C:\\Users\\ibrah\\source\\repos\\GenericBase\\Business.Layer.Access\\Business.Layer.Access.csproj",
         "packagesPath": "C:\\Users\\ibrah\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ibrah\\OneDrive\\Masaüstü\\.net\\repogeneric\\Business.Layer.Access\\obj\\",
+        "outputPath": "C:\\Users\\ibrah\\source\\repos\\GenericBase\\Business.Layer.Access\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ibrah\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\ibrah\\OneDrive\\Masaüstü\\.net\\repogeneric\\Data.Layer.Access\\Data.Layer.Access.csproj": {
-                "projectPath": "C:\\Users\\ibrah\\OneDrive\\Masaüstü\\.net\\repogeneric\\Data.Layer.Access\\Data.Layer.Access.csproj"
+              "C:\\Users\\ibrah\\source\\repos\\GenericBase\\Data.Layer.Access\\Data.Layer.Access.csproj": {
+                "projectPath": "C:\\Users\\ibrah\\source\\repos\\GenericBase\\Data.Layer.Access\\Data.Layer.Access.csproj"
               }
             }
           }
@@ -63,14 +63,14 @@
         }
       }
     },
-    "C:\\Users\\ibrah\\OneDrive\\Masaüstü\\.net\\repogeneric\\Data.Layer.Access\\Data.Layer.Access.csproj": {
+    "C:\\Users\\ibrah\\source\\repos\\GenericBase\\Data.Layer.Access\\Data.Layer.Access.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ibrah\\OneDrive\\Masaüstü\\.net\\repogeneric\\Data.Layer.Access\\Data.Layer.Access.csproj",
+        "projectUniqueName": "C:\\Users\\ibrah\\source\\repos\\GenericBase\\Data.Layer.Access\\Data.Layer.Access.csproj",
         "projectName": "Data.Layer.Access",
-        "projectPath": "C:\\Users\\ibrah\\OneDrive\\Masaüstü\\.net\\repogeneric\\Data.Layer.Access\\Data.Layer.Access.csproj",
+        "projectPath": "C:\\Users\\ibrah\\source\\repos\\GenericBase\\Data.Layer.Access\\Data.Layer.Access.csproj",
         "packagesPath": "C:\\Users\\ibrah\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ibrah\\OneDrive\\Masaüstü\\.net\\repogeneric\\Data.Layer.Access\\obj\\",
+        "outputPath": "C:\\Users\\ibrah\\source\\repos\\GenericBase\\Data.Layer.Access\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ibrah\\AppData\\Roaming\\NuGet\\NuGet.Config",

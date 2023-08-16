@@ -19,6 +19,7 @@ namespace Data.Layer.Access.Concrete
 
         public async Task<User> DeleteUser(int id)
         {
+
             var user =  await _context.Users.FirstOrDefaultAsync(i=>i.Id==id);
             return await DeleteBase(user);
         }

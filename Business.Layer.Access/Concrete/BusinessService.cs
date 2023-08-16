@@ -42,11 +42,12 @@ namespace Business.Layer.Access.Concrete
         {
             return _userRepo.GetUser(user);
         }
+        //Product
 
-        public Task<Product> DeleteBusinessProduct(int id)
-        {
-            return _productRepo.DeleteProduct(id);
-        }
+        //public Task<Product> DeleteBusinessProduct(int id)
+        //{
+        //    return _productRepo.DeleteProduct(id);
+        //}
 
     }
 }

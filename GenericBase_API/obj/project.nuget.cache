@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nUK6LKbSJ9e9pzfXDr4JiaHSz1il3p2ubyaFTCihznsjFpxk0u6bDZm4GOyHyn2zKPQAsNn5IoilFi0RXe6Ynw==",
+  "dgSpecHash": "3SDNzPuu/jAIqTDzJiXaoIUeogUWmMEZ2LKpsircH+W4nS/Zms3t5CCpfjBU+HEQIHGn8MWxXLs+49VpzI0I2A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ibrah\\OneDrive\\Masaüstü\\.net\\repogeneric\\GenericBase_API\\GenericBase_API.csproj",
+  "projectFilePath": "C:\\Users\\ibrah\\source\\repos\\GenericBase\\GenericBase_API\\GenericBase_API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ibrah\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\ibrah\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

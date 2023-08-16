@@ -15,7 +15,7 @@ namespace Business.Layer.Access.Interface
         Task<User> DeleteBusinessUser(int id);
         Task<User> GetUser(User user);
 
-
-        Task<Product> DeleteBusinessProduct(int id);
+        //Product
+        //Task<Product> DeleteBusinessProduct(int id);
     }
 }

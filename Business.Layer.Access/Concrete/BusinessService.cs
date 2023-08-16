@@ -11,47 +11,42 @@ namespace Business.Layer.Access.Concrete
 {
     public class BusinessService : IBusinessService
     {
-        private readonly IBusinessService _bridgeService;
+        private readonly IUserRepo _userRepo;
+        private readonly IProductRepo _productRepo;
 
-        public BusinessService(IBusinessService bridgeService)
+        public BusinessService(IProductRepo productRepo)
         {
-            _bridgeService = bridgeService;
+            _productRepo = productRepo;
         }
 
-        public void Add(UserInfo entity)
+        public BusinessService(IUserRepo userRepo)
         {
-            _bridgeService.Add(entity);
+            _userRepo = userRepo;
         }
 
-        public void Delete(UserInfo entity)
+        public Task<User> CreateBusinessUser(User user)
         {
-            if (entity != null)
-            {
-                _bridgeService?.Delete(entity);
-            }
-            else throw new Exception("Error.");
+            return _userRepo.CreateUser(user);
+        }
+        public Task<User> DeleteBusinessUser(int id)
+        {
+         
+            return _userRepo.DeleteUser(id);
         }
 
-        public IEnumerable<UserInfo> GetAll()
+        public Task<List<User>> GetAllUser()
         {
-            return _bridgeService.GetAll();
+            return _userRepo.GetAllUsers();
+        }
+        public Task<User> GetUser(User user)
+        {
+            return _userRepo.GetUser(user);
         }
 
-   
-
-        public void Update(UserInfo entity)
+        public Task<Product> DeleteBusinessProduct(int id)
         {
-            _bridgeService.Update(entity);
+            return _productRepo.DeleteProduct(id);
         }
 
-        Task<UserInfo> IBaseRepo<UserInfo>.GetById(int id)
-        {
-            if (id != null)
-            {
-
-                return _bridgeService.GetById(id);
-            }
-            else throw new Exception("Error, id not found");
-        }
     }
 }

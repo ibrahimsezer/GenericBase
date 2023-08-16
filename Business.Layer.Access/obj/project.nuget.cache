@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nppI5kLfJbnKpVTEHWyLvG86dTppnzE+GUtm4TLuvO2Eux+cZwhP+ax0hEcQVkCt4WVpmOMVridl3lIPaJSHyQ==",
+  "dgSpecHash": "UayXBxOqUxVHxbsZrJIWnttvMcWmmkSOqTLgDgEKjdNu9GQ85zsFrOxANlMPF3kGvwwJjUkUchzO5+PdVupDoA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ibrah\\source\\repos\\GenericBase\\Business.Layer.Access\\Business.Layer.Access.csproj",
+  "projectFilePath": "C:\\Users\\ibrah\\OneDrive\\Masaüstü\\.net\\repogeneric\\Business.Layer.Access\\Business.Layer.Access.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ibrah\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\ibrah\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

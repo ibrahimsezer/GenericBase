@@ -9,69 +9,20 @@ using System.Threading.Tasks;
 
 namespace Data.Layer.Access.Concrete
 {
-    public class ProductRepo<T> : IProductRepo
+    public class ProductRepo : BaseRepo<Product>, IProductRepo
     {
-        private readonly DbContext _context;
-        public ProductRepo(DbContext context)
+        private readonly DataAccess _context;
+
+        public ProductRepo(DataAccess context):base(context)
         {
             _context = context;
         }
 
-        public void Add(Product entity)
+        public async Task<Product> DeleteProduct(int id)
         {
-            _context.Set<Product>().Add(entity);
-        }
-
-        public void Delete(Product entity)
-        {
-            _context.Set<Product>().Remove(entity);
-        }
-
-        public IEnumerable<Product> GetAll()
-        {
-            return _context.Set<Product>().ToList();
-        }
-
-        public async Task<Product> GetById(int id)
-        {
-            return await _context.Set<Product>().FindAsync(id);
-        }
-
-        public void Update(Product entity)
-        {
-            _context.Set<Product>().Update(entity);
-        }
-
-        Task<Product> IBaseRepo<Product>.GetById(int id)
-        {
-            return _context.Set<Task<Product>>().Find(id);
-
+            var product = await _context.Products.FirstOrDefaultAsync(i=>i.Id == id);
+            return await DeleteBase(product);
         }
     }
-}
+    }
 
-/*
-  void IBaseRepo<Product>.Add(Product entity)
-        {
-            _context.Set<Product>().Add(entity);
-        }
-
-        void IBaseRepo<Product>.Delete(Product entity)
-        {
-           _context.Set<Product>().Remove(entity);
-        }
-
-        IEnumerable<Product> IBaseRepo<Product>.GetAll()
-        {
-            return _context.Set<Product>().ToList();
-        }
-
-        Product IBaseRepo<Product>.GetById(int id)
-        {
-            return _context.Set<Product>().Find(id); 
-        }
-
-        void IBaseRepo<Product>.Update(Product entity)
-        {
-            _context.Set<Product>().Update(entity);
-        }*/

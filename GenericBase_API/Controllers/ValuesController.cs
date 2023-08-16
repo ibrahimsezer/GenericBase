@@ -1,6 +1,5 @@
 ﻿using Business.Layer.Access.Interface;
 using Data.Layer.Access.Entity;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GenericBase_API.Controllers
@@ -16,24 +15,46 @@ namespace GenericBase_API.Controllers
             _businessService = businessService;
         }
 
+        //[HttpGet]
+        //public  async Task<IActionResult> GetIdAsync(int id)
+        //{
+        //    var getid = await _businessService.GetById(id);
+        //    return Ok();
+        //}
         [HttpGet]
-        public  async Task<IActionResult> GetIdAsync(int id)
+        public async Task<IActionResult> GetAll()
         {
-            var getid = await _businessService.GetById(id);
+            var getalluser = await _businessService.GetAllUser();
+            return Ok(getalluser);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateUser(User user)
+        {
+            var createUser = await _businessService.CreateBusinessUser(user);
+            return Ok(createUser);
+        }
+
+        [HttpDelete("user")]
+        public async Task<IActionResult> DeleteById(int id)
+        {
+
+            await _businessService.DeleteBusinessUser(id);
+            return Ok();
+        }
+
+
+        [HttpDelete("product")]
+        public async Task<IActionResult> DeleteProductById(int id)
+        {
+            await _businessService.DeleteBusinessProduct(id);
             return Ok();
         }
         //[HttpGet]
-        //public IActionResult GetAll()
+        //public async Task<IActionResult> GetUser(User user)
         //{
-        //    _businessService.GetAll();
-        //    return Ok();
+        //    var getuser = await _businessService.GetUser(user);
+        //    return Ok(getuser);
         //}
-
-        [HttpDelete]
-        public IActionResult DeleteById(int id) {
-            UserInfo entity = new();
-            entity.Id = id;
-            _businessService.Delete(entity);
-                return null; }
     }
 }

@@ -8,8 +8,14 @@ using System.Threading.Tasks;
 
 namespace Business.Layer.Access.Interface
 {
-    public interface IBusinessService:IBaseRepo<UserInfo>
+    public interface IBusinessService
     {
+        Task<List<User>> GetAllUser();
+        Task<User> CreateBusinessUser(User user);
+        Task<User> DeleteBusinessUser(int id);
+        Task<User> GetUser(User user);
 
+
+        Task<Product> DeleteBusinessProduct(int id);
     }
 }

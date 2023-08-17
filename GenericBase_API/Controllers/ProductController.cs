@@ -1,6 +1,5 @@
 ﻿using Business.Layer.Access.Interface;
 using Data.Layer.Access.Entity;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GenericBase_API.Controllers
@@ -16,17 +15,19 @@ namespace GenericBase_API.Controllers
             _productBusinessService = productBusinessService;
         }
 
-        [HttpDelete("product/Delete")]
-        public async Task<IActionResult> DeleteByIdProduct(int id)
-        {
-            await _productBusinessService.DeleteProduct(id);
-            return Ok();
-        }
         [HttpGet("product/GetAll")]
         public async Task<IActionResult> GetAllProduct()
         {
             var getallproduct = await _productBusinessService.GetAllProduct();
             return Ok(getallproduct);
+        }
+
+        [HttpGet("product/GetProduct")]
+        public async Task<IActionResult> GetProduct(int id)
+        {
+            var getProduct = await _productBusinessService.GetProduct(id);
+            return Ok(getProduct);
+
         }
 
         [HttpPost("product/Create")]
@@ -36,12 +37,19 @@ namespace GenericBase_API.Controllers
             return Ok(createProduct);
         }
 
-        [HttpGet("product/GetProduct")]
-        public async Task<IActionResult> GetProduct(int id)
+        [HttpDelete("product/Delete")]
+        public async Task<IActionResult> DeleteByIdProduct(int id)
         {
-            var getProduct = await _productBusinessService.GetProduct(id);
-            return Ok(getProduct);
-            
+            await _productBusinessService.DeleteProduct(id);
+            return Ok();
         }
+
+        [HttpPut("product/Update")]
+        public async Task<IActionResult> UpdateProduct(int id, [FromBody] Product product)
+
+        { await _productBusinessService.UpdateProduct(id, product);
+            return Ok();
+        }
+
     }
 }

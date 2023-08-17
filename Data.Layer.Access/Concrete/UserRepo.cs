@@ -28,9 +28,10 @@ namespace Data.Layer.Access.Concrete
         {
             return await _context.Users.Include(u => u.Products).ToListAsync();
         }
-        public async Task<User> GetUser(User user)
+        public async Task<User> GetUser(int id)
         {
-            return await GetUser(user);
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == id);
+                return await GetUnit(user);
         }
     }
 }

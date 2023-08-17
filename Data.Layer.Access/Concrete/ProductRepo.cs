@@ -1,6 +1,7 @@
 ﻿using Data.Layer.Access.Entity;
 using Data.Layer.Access.Interface;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Update.Internal;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,6 +39,13 @@ namespace Data.Layer.Access.Concrete
         {
             var product =  await _context.Products.FirstOrDefaultAsync(u=>u.Id ==id);
             return await GetUnit(product);
+        }
+        public async Task<Product> UpdateProduct(int id, Product product)
+        {
+            var updateProduct = await _context.Products.FindAsync(id);
+            updateProduct.ProductName = product.ProductName;
+            updateProduct.Category = product.Category;
+            return updateProduct;
         }
     }
     }

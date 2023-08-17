@@ -1,11 +1,6 @@
 ﻿using Business.Layer.Access.Interface;
 using Data.Layer.Access.Entity;
 using Data.Layer.Access.Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Business.Layer.Access.Concrete
 {
@@ -35,6 +30,10 @@ namespace Business.Layer.Access.Concrete
         public Task<Product> GetProduct(int id)
         {
             return _productRepo.GetProduct(id);
+        }
+        public Task<Product> UpdateProduct(int id,Product product)
+        {
+            return _productRepo.UpdateProduct(id,product);
         }
     }
 }

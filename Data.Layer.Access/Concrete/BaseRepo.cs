@@ -30,9 +30,9 @@ namespace Data.Layer.Access.Concrete
         }
         public virtual async Task<T> DeleteBase(T entity)
         {
-
-            await _context.Set<T>().FindAsync(entity.Id);
-             _context.Remove(entity);
+            var delete_unit = await _context.Set<T>().Include(u => u.Id == entity.Id).ToListAsync();
+           // await _context.Set<T>().FindAsync(entity.Id);
+             _context.Remove(delete_unit);
             await _context.SaveChangesAsync();
             return null;
         }
@@ -41,6 +41,13 @@ namespace Data.Layer.Access.Concrete
         {
            return await _context.Set<T>().FindAsync(entity.Id);
     
+        }
+
+        public virtual async Task<T> UpdateBase(T entity)
+        {
+            var updateUnit = await _context.Set<T>().FirstOrDefaultAsync(u => u.Id == entity.Id);
+            await _context.SaveChangesAsync();  
+            return updateUnit;
         }
 
     }

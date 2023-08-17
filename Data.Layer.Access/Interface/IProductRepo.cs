@@ -13,5 +13,6 @@ namespace Data.Layer.Access.Interface
         Task<List<Product>> GetAllProduct();
         Task<Product> CreateProduct(Product product);
         Task<Product> GetProduct(int id);
+        Task<Product> UpdateProduct(int id,Product product);
     }
 }

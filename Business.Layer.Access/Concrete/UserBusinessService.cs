@@ -1,11 +1,7 @@
 ﻿using Business.Layer.Access.Interface;
 using Data.Layer.Access.Entity;
 using Data.Layer.Access.Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace Business.Layer.Access.Concrete
 {
@@ -13,7 +9,7 @@ namespace Business.Layer.Access.Concrete
     {
         private readonly IUserRepo _userRepo;
 
-   
+
 
         public UserBusinessService(IUserRepo userRepo)
         {
@@ -26,7 +22,7 @@ namespace Business.Layer.Access.Concrete
         }
         public Task<User> DeleteBusinessUser(int id)
         {
-         
+
             return _userRepo.DeleteUser(id);
         }
 
@@ -34,9 +30,9 @@ namespace Business.Layer.Access.Concrete
         {
             return _userRepo.GetAllUsers();
         }
-        public Task<User> GetUser(User user)
+        public Task<User> GetUser(int id)
         {
-            return _userRepo.GetUser(user);
+            return _userRepo.GetUser(id);
         }
 
 

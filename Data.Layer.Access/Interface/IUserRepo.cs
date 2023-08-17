@@ -13,7 +13,7 @@ namespace Data.Layer.Access.Interface
         Task<List<User>> GetAllUsers();
         Task<User> CreateUser(User user);
         Task<User> DeleteUser(int id);
-        Task<User> GetUser(User user);
+        Task<User> GetUser(int id);
 
     }
 }

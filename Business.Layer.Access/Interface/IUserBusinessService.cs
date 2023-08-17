@@ -13,7 +13,7 @@ namespace Business.Layer.Access.Interface
         Task<List<User>> GetAllUser();
         Task<User> CreateBusinessUser(User user);
         Task<User> DeleteBusinessUser(int id);
-        Task<User> GetUser(User user);
+        Task<User> GetUser(int id);
 
 
     }

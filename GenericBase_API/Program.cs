@@ -12,9 +12,13 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<DataAccess>(options=> options.UseSqlServer
 (builder.Configuration.GetConnectionString("DefaultConnection")));
 
+//Add Repo
 builder.Services.AddScoped<IUserRepo,UserRepo>();
-builder.Services.AddScoped<IBusinessService,BusinessService>();
+builder.Services.AddScoped<IProductRepo, ProductRepo>();
 
+//Add BusinessService
+builder.Services.AddScoped<IUserBusinessService,UserBusinessService>();
+builder.Services.AddScoped<IProductBusinessService, ProductBusinessService>();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();

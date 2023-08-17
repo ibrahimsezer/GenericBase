@@ -9,17 +9,13 @@ using System.Threading.Tasks;
 
 namespace Business.Layer.Access.Concrete
 {
-    public class BusinessService : IBusinessService
+    public class UserBusinessService : IUserBusinessService
     {
         private readonly IUserRepo _userRepo;
-        private readonly IProductRepo _productRepo;
 
-        public BusinessService(IProductRepo productRepo)
-        {
-            _productRepo = productRepo;
-        }
+   
 
-        public BusinessService(IUserRepo userRepo)
+        public UserBusinessService(IUserRepo userRepo)
         {
             _userRepo = userRepo;
         }
@@ -42,12 +38,7 @@ namespace Business.Layer.Access.Concrete
         {
             return _userRepo.GetUser(user);
         }
-        //Product
 
-        //public Task<Product> DeleteBusinessProduct(int id)
-        //{
-        //    return _productRepo.DeleteProduct(id);
-        //}
 
     }
 }

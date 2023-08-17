@@ -18,10 +18,26 @@ namespace Data.Layer.Access.Concrete
             _context = context;
         }
 
+        public async Task<Product> CreateProduct(Product product)
+        {
+            return await CreateBase(product);
+        }
+
         public async Task<Product> DeleteProduct(int id)
         {
             var product = await _context.Products.FirstOrDefaultAsync(i=>i.Id == id);
             return await DeleteBase(product);
+        }
+
+        public async Task<List<Product>> GetAllProduct()
+        {
+            return await _context.Products.ToListAsync();
+        }
+
+        public async Task<Product> GetProduct(int id)
+        {
+            var product =  await _context.Products.FirstOrDefaultAsync(u=>u.Id ==id);
+            return await GetUnit(product);
         }
     }
     }

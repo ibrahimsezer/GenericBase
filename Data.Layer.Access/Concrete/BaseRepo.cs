@@ -43,25 +43,5 @@ namespace Data.Layer.Access.Concrete
     
         }
 
-
-        //public virtual async Task<T> IBaseRepo<T>.GetById(int id)
-        //{
-        //    return await _context.Set<Task<T>>().Find(id);
-
-        //}
-
-        //public virtual async void  IBaseRepo<T>.Update(T entity)
-        //{
-        //     _context.Set<T>().Update(entity);
-        //    await _context.SaveChangesAsync();
-        //}
-
-        //async void IBaseRepo<T>.Delete(T entity)
-        //{
-        //    _context.Set<T>().FindAsync(entity);
-        //    _context.Remove(entity);
-        //    await _context.SaveChangesAsync();
-
-        //}
     }
 }

@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Data.Layer.Access.Interface
+namespace Business.Layer.Access.Interface
 {
-    public interface IProductRepo
+    public interface IProductBusinessService
     {
         Task<Product> DeleteProduct(int id);
         Task<List<Product>> GetAllProduct();

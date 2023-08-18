@@ -34,6 +34,10 @@ namespace Business.Layer.Access.Concrete
         {
             return _userRepo.GetUser(id);
         }
+        public Task<User> UpdateBusinessUser(int id, User user)
+        {
+            return _userRepo.UpdateUser(id, user);
+        }
 
 
     }

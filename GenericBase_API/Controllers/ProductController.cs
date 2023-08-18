@@ -48,7 +48,7 @@ namespace GenericBase_API.Controllers
         public async Task<IActionResult> UpdateProduct(int id, [FromBody] Product product)
 
         { await _productBusinessService.UpdateProduct(id, product);
-            return Ok();
+            return Ok(product);
         }
 
     }

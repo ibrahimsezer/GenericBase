@@ -14,7 +14,7 @@ namespace Business.Layer.Access.Interface
         Task<User> CreateBusinessUser(User user);
         Task<User> DeleteBusinessUser(int id);
         Task<User> GetUser(int id);
-
+        Task<User> UpdateBusinessUser(int id, User user);
 
     }
 }

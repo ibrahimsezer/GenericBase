@@ -45,7 +45,7 @@ namespace Data.Layer.Access.Concrete
             var updateProduct = await _context.Products.FindAsync(id);
             updateProduct.ProductName = product.ProductName;
             updateProduct.Category = product.Category;
-            return updateProduct;
+            return await  UpdateBase(updateProduct);
         }
     }
     }

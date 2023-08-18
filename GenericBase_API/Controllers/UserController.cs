@@ -34,7 +34,12 @@ namespace GenericBase_API.Controllers
             var createUser = await _businessService.CreateBusinessUser(user);
             return Ok(createUser);
         }
-
+        [HttpPut]
+        public async Task<IActionResult> UpdateUser(int id , User user)
+        {
+            await _businessService.UpdateBusinessUser(id, user);
+            return Ok(user);
+        }
         [HttpDelete("user/Delete")]
         public async Task<IActionResult> DeleteByIdUser(int id)
         {

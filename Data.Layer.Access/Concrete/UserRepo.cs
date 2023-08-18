@@ -33,5 +33,14 @@ namespace Data.Layer.Access.Concrete
             var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == id);
                 return await GetUnit(user);
         }
+        public async Task<User> UpdateUser(int id, User user)
+        {
+            var updateUser = await _context.Users.FindAsync(id);
+            updateUser.Name = user.Name;
+            updateUser.Surname = user.Surname;
+            updateUser.Information = user.Information;
+            updateUser.Products = user.Products;
+            return await UpdateBase(updateUser);
+        }
     }
 }

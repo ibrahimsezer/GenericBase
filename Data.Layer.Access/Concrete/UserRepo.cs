@@ -19,16 +19,25 @@ namespace Data.Layer.Access.Concrete
 
         public async Task<User> DeleteUser(int id)
         {
-            var user =  await _context.Users.FirstOrDefaultAsync(i=>i.Id==id);
-            if (user.Products != null)
+            var user = await _context.Users.Include(u => u.Products).FirstOrDefaultAsync(i => i.Id == id);
+            if (user != null)
             {
-                foreach (var product in user.Products)
+                if (user.Products != null)
                 {
-                    _context.Products.Remove(product);
-                }
+                    foreach (var product in user.Products)
+                    {
+                        _context.Products.Remove(product);
 
+                    }
+                }
+               
+                //_context.Users.Remove(user);
+                //await _context.SaveChangesAsync();
+                //return null;
                 return await DeleteBase(user);
+                
             }
+
             else return await DeleteBase(user);
            
         }

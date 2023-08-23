@@ -1,6 +1,8 @@
 ﻿using Business.Layer.Access.Interface;
+using Data.Layer.Access.DTO;
 using Data.Layer.Access.Entity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace GenericBase_API.Controllers
 {
@@ -37,6 +39,14 @@ namespace GenericBase_API.Controllers
             return Ok(createProduct);
         }
 
+        [HttpPut("product/Update")]
+        public async Task<IActionResult> UpdateProduct(int id, [FromBody] Product product)
+
+        {
+            await _productBusinessService.UpdateProduct(id, product);
+            return Ok(product);
+        }
+
         [HttpDelete("product/Delete")]
         public async Task<IActionResult> DeleteByIdProduct(int id)
         {
@@ -44,12 +54,6 @@ namespace GenericBase_API.Controllers
             return Ok();
         }
 
-        [HttpPut("product/Update")]
-        public async Task<IActionResult> UpdateProduct(int id, [FromBody] Product product)
-
-        { await _productBusinessService.UpdateProduct(id, product);
-            return Ok(product);
-        }
 
     }
 }

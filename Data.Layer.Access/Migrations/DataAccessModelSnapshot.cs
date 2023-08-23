@@ -45,7 +45,7 @@ namespace Data.Layer.Access.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Products");
+                    b.ToTable("Products", (string)null);
                 });
 
             modelBuilder.Entity("Data.Layer.Access.Entity.User", b =>
@@ -69,7 +69,7 @@ namespace Data.Layer.Access.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users");
+                    b.ToTable("Users", (string)null);
                 });
 
             modelBuilder.Entity("Data.Layer.Access.Entity.Product", b =>

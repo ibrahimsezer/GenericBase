@@ -39,7 +39,6 @@ namespace Data.Layer.Access
             //    .HasMany(p => p.Users)
             //    .WithMany(u => u.Products)
             //    .UsingEntity(join => join.ToTable("ProductUser"));
-                
 
         }
     }

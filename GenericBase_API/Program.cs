@@ -26,7 +26,22 @@ builder.Services.AddScoped<IProductBusinessService, ProductBusinessService>();
 
 //builder.Services.AddAutoMapper(typeof(ProductMappingProfile));
 //builder.Services.AddScoped<ProductMappingProfile>();
+//static void Main(string[] args)
+//{
+//    CreateHostBuilder(args).Build().Run();
+//}
 
+//static IHostBuilder CreateHostBuilder(string[] args) =>
+//    Host.CreateDefaultBuilder(args)
+//        .ConfigureWebHostDefaults(webBuilder =>
+//        {
+//            webBuilder.UseStartup<Program>();
+//        })
+//        .ConfigureServices((hostContext, services) =>
+//        {
+//            services.AddAutoMapper(typeof(ProductMappingProfile));
+//        });
+builder.Services.AddAutoMapper(typeof(ProductMappingProfile));
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

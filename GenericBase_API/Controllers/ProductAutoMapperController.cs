@@ -12,38 +12,39 @@ namespace GenericBase_API.Controllers
     [ApiController]
     public class ProductAutoMapperController : ControllerBase
     {
-        private readonly IMapper _mapper;
         private readonly DataAccess _context;
+        private readonly IMapper _mapper;
 
         //public ProductAutoMapperController(DataAccess context)
         //{
         //    _context = context;
         //}
 
-        public ProductAutoMapperController(IMapper mapper)
+        public ProductAutoMapperController(IMapper mapper,DataAccess context)
         {
             _mapper = mapper;
+            _context = context;
         }
 
         [HttpGet("automapper1")]
-        public ActionResult<IEnumerable<ProductDTO>> GetProducts1()
+        public async Task<IActionResult> GetProducts1()
         {
-            var productDTOs = _mapper.Map<List<ProductDTO>>(_context);
-            return Ok(productDTOs);
+            await _context.Products.ToListAsync();
+            var products = await _context.Products.ToListAsync();
+
+            if (products != null)
+            {
+                var productDTOs = _mapper.Map<List<ProductDTO>>(products);
+                return Ok(productDTOs);
+            }
+            else throw new Exception("products return a null");
         }
 
-        // GET: api/products
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<ProductDTO>>> GetProducts()
-        {
-            var products = await _context.Products.ToListAsync();
-            var productDTOs = _mapper.Map<List<ProductDTO>>(products);
-            return Ok(productDTOs);
-        }
+
 
        // POST: api/products
        [HttpPost]
-        public async Task<ActionResult<ProductDTO>> CreateProduct(ProductDTO productDTO)
+        public async Task<IActionResult> CreateProduct(ProductDTO productDTO)
         {
             var product = _mapper.Map<Product>(productDTO);
             _context.Products.Add(product);

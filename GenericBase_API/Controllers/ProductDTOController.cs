@@ -18,24 +18,23 @@ namespace GenericBase_API.Controllers
             _context = context;
         }
 
-        // GET: api/products
         [HttpGet("productDTO/GetProducts")]
-        public ActionResult<IEnumerable<ProductDTO>> GetProducts()
+        public async Task<ActionResult<IEnumerable<ProductDTO>>> GetProducts()
         {
-            var products = _context.Products.Select(p => new ProductDTO
-            {
-                Id = p.Id,
-                ProductName = p.ProductName,
-                Category = p.Category
-            }).ToList();
+            var products = await _context.Products
+                .Select(p => new ProductDTO
+                {
+                    Id = p.Id,
+                    ProductName = p.ProductName,
+                    Category = p.Category
+                })
+                .ToListAsync();
 
             return products;
         }
 
-
-        // POST: api/products
         [HttpPost("productDTO/Create")]
-        public  ActionResult<ProductDTO> CreateProduct(ProductDTO productDTO)
+        public async Task<ActionResult<ProductDTO>> CreateProduct(ProductDTO productDTO)
         {
             var product = new Product
             {
@@ -44,13 +43,14 @@ namespace GenericBase_API.Controllers
             };
 
             _context.Products.Add(product);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync(); // Asenkron olarak kaydet
 
             // DTO'yu oluşturulan ürünün kimliği ile güncelleyerek dönebilirsiniz
             productDTO.Id = product.Id;
 
             return CreatedAtAction(nameof(GetProducts), new { id = product.Id }, productDTO);
         }
+
 
         ////// PUT: api/products/{id}
         //[HttpPut("{productDTO/Update}")]

@@ -26,7 +26,7 @@ namespace GenericBase_API.Controllers
             _context = context;
         }
 
-        [HttpGet("automapper1")]
+        [HttpGet("automapper/GetProducts")]
         public async Task<IActionResult> GetProducts1()
         {
             await _context.Products.ToListAsync();
@@ -43,15 +43,30 @@ namespace GenericBase_API.Controllers
 
 
        // POST: api/products
-       [HttpPost]
+       [HttpPost("automapper/CreateProduct")]
         public async Task<IActionResult> CreateProduct(ProductDTO productDTO)
         {
             var product = _mapper.Map<Product>(productDTO);
             _context.Products.Add(product);
             await _context.SaveChangesAsync();
             return Ok(product);
-
         }
+
+        [HttpDelete("automapper/DeleteProducts")]
+        public async Task<IActionResult> DeleteProduct(ProductDTO productDTO)
+        {
+            var product = await _context.Products.FindAsync(productDTO.Id);
+
+            if (product != null)
+            {
+                _context.Products.Remove(product);
+                await _context.SaveChangesAsync();
+                return NoContent();
+            }
+            else throw new Exception("id not found.");
+            
+        }
+
 
     }
 }

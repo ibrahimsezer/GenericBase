@@ -20,6 +20,9 @@ namespace Data.Layer.Access.Entity
     {
         public string ProductName { get; set; }
         public string Category { get; set; }
+        public int StockQuantity { get; set; } 
+        public string Description { get; set; }
+        public double Price { get; set; }
     }
 
     public class BaseEntity

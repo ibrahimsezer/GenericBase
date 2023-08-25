@@ -15,20 +15,20 @@ namespace GenericBase_API.Controllers
             _businessService = businessService;
         }
 
-        [HttpGet("user/GetAll")]
+        [HttpGet("GetAll")]
         public async Task<IActionResult> GetAll()
         {
             var getalluser = await _businessService.GetAllUser();
             return Ok(getalluser);
         }
-        [HttpGet("user/GetUser")]
+        [HttpGet("GetUser")]
         public async Task<IActionResult> GetUser(int id)
         {
             var getuser = await _businessService.GetUser(id);
             return Ok(getuser);
         }
 
-        [HttpPost("user/Create")]
+        [HttpPost("Create")]
         public async Task<IActionResult> CreateUser(User user)
         {
             var createUser = await _businessService.CreateBusinessUser(user);
@@ -40,7 +40,7 @@ namespace GenericBase_API.Controllers
             await _businessService.UpdateBusinessUser(id, user);
             return Ok(user);
         }
-        [HttpDelete("user/Delete")]
+        [HttpDelete("Delete")]
         public async Task<IActionResult> DeleteByIdUser(int id)
         {
             await _businessService.DeleteBusinessUser(id);

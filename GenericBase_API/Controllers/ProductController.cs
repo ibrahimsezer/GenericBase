@@ -17,14 +17,14 @@ namespace GenericBase_API.Controllers
             _productBusinessService = productBusinessService;
         }
 
-        [HttpGet("product/GetAll")]
+        [HttpGet("GetAll")]
         public async Task<IActionResult> GetAllProduct()
         {
             var getallproduct = await _productBusinessService.GetAllProduct();
             return Ok(getallproduct);
         }
 
-        [HttpGet("product/GetProduct")]
+        [HttpGet("GetProduct")]
         public async Task<IActionResult> GetProduct(int id)
         {
             var getProduct = await _productBusinessService.GetProduct(id);
@@ -32,14 +32,14 @@ namespace GenericBase_API.Controllers
 
         }
 
-        [HttpPost("product/Create")]
+        [HttpPost("Create")]
         public async Task<IActionResult> CreateProduct(Product product)
         {
             var createProduct = await _productBusinessService.CreateProduct(product);
             return Ok(createProduct);
         }
 
-        [HttpPut("product/Update")]
+        [HttpPut("Update")]
         public async Task<IActionResult> UpdateProduct(int id, [FromBody] Product product)
 
         {
@@ -47,7 +47,7 @@ namespace GenericBase_API.Controllers
             return Ok(product);
         }
 
-        [HttpDelete("product/Delete")]
+        [HttpDelete("Delete")]
         public async Task<IActionResult> DeleteByIdProduct(int id)
         {
             await _productBusinessService.DeleteProduct(id);

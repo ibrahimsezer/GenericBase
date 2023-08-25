@@ -26,7 +26,7 @@ namespace GenericBase_API.Controllers
             _context = context;
         }
 
-        [HttpGet("automapper/GetProducts")]
+        [HttpGet("GetProducts")]
         public async Task<IActionResult> GetProducts1()
         {
             await _context.Products.ToListAsync();
@@ -43,7 +43,7 @@ namespace GenericBase_API.Controllers
 
 
        // POST: api/products
-       [HttpPost("automapper/CreateProduct")]
+       [HttpPost("CreateProduct")]
         public async Task<IActionResult> CreateProduct(ProductDTO productDTO)
         {
             var product = _mapper.Map<Product>(productDTO);
@@ -52,7 +52,7 @@ namespace GenericBase_API.Controllers
             return Ok(product);
         }
 
-        [HttpDelete("automapper/DeleteProducts")]
+        [HttpDelete("DeleteProducts")]
         public async Task<IActionResult> DeleteProduct(ProductDTO productDTO)
         {
             var product = await _context.Products.FindAsync(productDTO.Id);

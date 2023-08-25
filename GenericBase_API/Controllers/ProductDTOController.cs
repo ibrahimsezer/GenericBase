@@ -18,7 +18,7 @@ namespace GenericBase_API.Controllers
             _context = context;
         }
 
-        [HttpGet("productDTO/GetProducts")]
+        [HttpGet("GetProducts")]
         public async Task<ActionResult<IEnumerable<ProductDTO>>> GetProducts()
         {
             var products = await _context.Products
@@ -33,7 +33,7 @@ namespace GenericBase_API.Controllers
             return products;
         }
 
-        [HttpPost("productDTO/Create")]
+        [HttpPost("Create")]
         public async Task<ActionResult<ProductDTO>> CreateProduct(ProductDTO productDTO)
         {
             var product = new Product

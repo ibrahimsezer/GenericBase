@@ -42,47 +42,47 @@ namespace Data.Layer.Access
             //    .UsingEntity(join => join.ToTable("ProductUser"));
 
 
-            modelBuilder.Entity<Product>().HasData(
-            new Product
-            {
-                ProductName = "Samsung Galaxy A21S",
-                Category = "Technology",
-                Description = "Mobile Phone",
-                StockQuantity = 1304,
-                Price = 1249.99
+            //modelBuilder.Entity<Product>().HasData(
+            //new Product
+            //{
+            //    ProductName = "Samsung Galaxy A21S",
+            //    Category = "Technology",
+            //    Description = "Mobile Phone",
+            //    StockQuantity = 1304,
+            //    Price = 1249.99
 
-            });
-            modelBuilder.Entity<Product>().HasData(
-            new Product
-            {
-                ProductName = "RedMi Note 10",
-                Category = "Technology",
-                Description = "Mobile Phone",
-                StockQuantity = 1334,
-                Price = 1049.99
+            //});
+            //modelBuilder.Entity<Product>().HasData(
+            //new Product
+            //{
+            //    ProductName = "RedMi Note 10",
+            //    Category = "Technology",
+            //    Description = "Mobile Phone",
+            //    StockQuantity = 1334,
+            //    Price = 1049.99
 
-            });
-            modelBuilder.Entity<Product>().HasData(
-            new Product
-            {
-                ProductName = "Huawei Nova 11i",
-                Category = "Technology",
-                Description = "Mobile Phone",
-                StockQuantity = 123,
-                Price = 1529.99
+            //});
+            //modelBuilder.Entity<Product>().HasData(
+            //new Product
+            //{
+            //    ProductName = "Huawei Nova 11i",
+            //    Category = "Technology",
+            //    Description = "Mobile Phone",
+            //    StockQuantity = 123,
+            //    Price = 1529.99
 
-            });
+            //});
             
-            modelBuilder.Entity<Product>().HasData(
-            new Product
-            {
-                ProductName = "Huawei P60 Pro",
-                Category = "Technology",
-                Description = "Mobile Phone",
-                StockQuantity = 1544,
-                Price = 1321.99
+            //modelBuilder.Entity<Product>().HasData(
+            //new Product
+            //{
+            //    ProductName = "Huawei P60 Pro",
+            //    Category = "Technology",
+            //    Description = "Mobile Phone",
+            //    StockQuantity = 1544,
+            //    Price = 1321.99
 
-            });
+            //});
 
         }
     }

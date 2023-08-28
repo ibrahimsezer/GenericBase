@@ -34,7 +34,7 @@ namespace GenericBase_API.Controllers
             var createUser = await _businessService.CreateBusinessUser(user);
             return Ok(createUser);
         }
-        [HttpPut]
+        [HttpPut("Update")]
         public async Task<IActionResult> UpdateUser(int id , User user)
         {
             await _businessService.UpdateBusinessUser(id, user);

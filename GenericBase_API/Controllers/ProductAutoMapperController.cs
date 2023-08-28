@@ -27,7 +27,7 @@ namespace GenericBase_API.Controllers
         }
 
         [HttpGet("GetProducts")]
-        public async Task<IActionResult> GetProducts1()
+        public async Task<IActionResult> GetProducts()
         {
             await _context.Products.ToListAsync();
             var products = await _context.Products.ToListAsync();
@@ -40,8 +40,14 @@ namespace GenericBase_API.Controllers
             else throw new Exception("products return a null");
         }
 
+        [HttpGet("GetProductOne")]
+        public async Task<IActionResult> GetProductOne(int id)
+        {
+            var product =await _context.Products.FirstOrDefaultAsync(p => p.Id == id);
+            return Ok(product);
 
-
+        }
+        
        // POST: api/products
        [HttpPost("CreateProduct")]
         public async Task<IActionResult> CreateProduct(ProductDTO productDTO)
@@ -52,16 +58,29 @@ namespace GenericBase_API.Controllers
             return Ok(product);
         }
 
-        [HttpDelete("DeleteProducts")]
-        public async Task<IActionResult> DeleteProduct(ProductDTO productDTO)
+        [HttpPut("UpdateProduct")]
+        public async Task<IActionResult> UpdateProduct(ProductDTO product)
         {
-            var product = await _context.Products.FindAsync(productDTO.Id);
+            var updproduct = await _context.Products.FirstOrDefaultAsync(p => p.Id == product.Id);
+            updproduct.ProductName = product.ProductName;
+            updproduct.Category = product.Category;
+            updproduct.StockQuantity = product.StockQuantity;
+            updproduct.Price = product.Price;
+            await _context.SaveChangesAsync();
+            return Ok(updproduct);
+
+        }
+
+        [HttpDelete("DeleteProducts")]
+        public async Task<IActionResult> DeleteProduct(int id)
+        {
+            var product = await _context.Products.FirstOrDefaultAsync(p => p.Id == id);
 
             if (product != null)
             {
                 _context.Products.Remove(product);
                 await _context.SaveChangesAsync();
-                return NoContent();
+                return Ok("Product Deleted.");
             }
             else throw new Exception("id not found.");
             

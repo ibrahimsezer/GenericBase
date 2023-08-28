@@ -55,17 +55,20 @@ namespace GenericBase_API.Controllers
             var product = _mapper.Map<Product>(productDTO);
             _context.Products.Add(product);
             await _context.SaveChangesAsync();
-            return Ok(product);
+
+            var createdProductDTO = _mapper.Map<ProductDTO>(product);
+            return CreatedAtAction(nameof(GetProductOne), new { id = createdProductDTO.Id }, createdProductDTO);
+
+
         }
 
         [HttpPut("UpdateProduct")]
         public async Task<IActionResult> UpdateProduct(ProductDTO product)
         {
             var updproduct = await _context.Products.FirstOrDefaultAsync(p => p.Id == product.Id);
-            updproduct.ProductName = product.ProductName;
-            updproduct.Category = product.Category;
-            updproduct.StockQuantity = product.StockQuantity;
-            updproduct.Price = product.Price;
+
+            if(updproduct == null) { return NotFound(); }
+            _mapper.Map(product, updproduct);
             await _context.SaveChangesAsync();
             return Ok(updproduct);
 
